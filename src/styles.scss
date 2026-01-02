@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-color-text: #ffffff;
+    --surface-ground: #f8f9fa;
+    --surface-card: #ffffff;
+    --surface-border: #dee2e6;
+    --surface-hover: #f1f5f9;
+    --text-color: #495057;
+    --app-bg:
+        linear-gradient(180deg,
+            #f8fafc 0%,
+            #f1f5f9 100%);
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: var(--app-bg);
+    font-family: var(--font-family);
+}

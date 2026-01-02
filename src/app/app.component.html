@@ -1,0 +1,41 @@
+<div class="page-container">
+  <header class="page-header">
+    <div class="header-left">
+      <div class="app-icon">
+        <i class="pi pi-table"></i>
+      </div>
+
+      <div class="title-group">
+        <div class="page-title">Super Table</div>
+        <div class="page-subtitle">
+          PrimeNG-powered Super Table
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <div class="playground-container">
+    <div class="sidebar">
+      <div class="sidebar-box">
+        <ul>
+          <li *ngFor="let mode of modes" (click)="switchMode(mode)" [class.active]="selectedMode === mode">
+            {{ mode }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="table-area">
+      <div class="table-wrapper">
+        <super-table *ngIf="currentConfig" [config]="currentConfig" [data]="currentData" (pageChange)="onPage($event)"
+          (sortChange)="onSort($event)" (selectionChange)="onSelection($event)">
+        </super-table>
+      </div>
+    </div>
+  </div>
+
+</div>
+<footer class="page-footer">
+  © 2026 My Application • Built with Angular & PrimeNG
+</footer>

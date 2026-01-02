@@ -1,0 +1,182 @@
+:host {
+    display: block;
+    height: 100vh;
+    background: var(--app-bg);
+}
+
+.playground-container {
+    height: 100%;
+    display: flex;
+    background:
+        radial-gradient(circle at top left,
+            rgba(99, 102, 241, 0.04),
+            transparent 60%),
+        radial-gradient(circle at bottom right,
+            rgba(14, 165, 233, 0.05),
+            transparent 55%);
+}
+
+/* ---------- LEFT SIDEBAR ---------- */
+.sidebar {
+    width: 260px;
+    /* increased width */
+    padding: 1rem;
+    background: linear-gradient(180deg,
+            var(--surface-section),
+            var(--surface-ground));
+    border-right: 1px solid var(--surface-border);
+    box-shadow: inset -1px 0 0 var(--surface-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-box {
+    background: var(--surface-card);
+    border: 1px solid var(--surface-border);
+    border-radius: 16px;
+    padding: 0.75rem;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.45rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar li:hover {
+    background: var(--surface-hover);
+}
+
+.sidebar li.active {
+    background: var(--primary-color);
+    color: var(--primary-color-text);
+}
+
+.sidebar li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------- RIGHT TABLE AREA ---------- */
+.table-area {
+    flex: 1;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.table-wrapper {
+    flex: 1;
+    margin: 1rem;
+    border-radius: 14px;
+    background: var(--surface-card);
+    border: 1px solid var(--surface-border);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08),
+        0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.page-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-ground);
+}
+
+/* ---------- Header---------- */
+.page-header {
+    min-height: 72px;
+    padding: 0 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(180deg,
+            var(--surface-card),
+            var(--surface-ground));
+
+    border-bottom: 1px solid var(--surface-border);
+
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.06),
+        0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.app-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg,
+            var(--primary-color),
+            color-mix(in srgb, var(--primary-color) 70%, black));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color-text);
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.page-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-color-secondary);
+    margin-top: 2px;
+}
+
+
+
+/* ---------- CONTENT ---------- */
+.page-content {
+    flex: 1;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+}
+
+super-table {
+    flex: 1;
+}
+
+/* ---------- FOOTER ---------- */
+.page-footer {
+    height: 40px;
+    background: var(--surface-card);
+    border-top: 1px solid var(--surface-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    color: var(--text-color-secondary);
+}
