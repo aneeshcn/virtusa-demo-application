@@ -26,13 +26,10 @@ import { AvatarModule } from 'primeng/avatar';
 export class SuperTableComponent {
   searchValue: any
   defaultAvatar = "https://primefaces.org/cdn/primeng/images/demo/avatar/walter.jpg";
-  @Input({ required: true }) config!: SuperTableConfig;// sent config everytime,will sent runtime error if not sent during component initialization
-  @Input() data: any[] = [];
+  @Input({ required: true }) config!: SuperTableConfig;
   @Input() loading = true;
 
-
-
-  selection: any | any[] = null;
+ selection: any | any[] = null;
   expandedRowKeys: { [key: string]: boolean } = {};
 
   ngOnInit() {
