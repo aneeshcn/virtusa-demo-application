@@ -27,9 +27,9 @@ export class SuperTableComponent {
   searchValue: any
   defaultAvatar = "https://primefaces.org/cdn/primeng/images/demo/avatar/walter.jpg";
   @Input({ required: true }) config!: SuperTableConfig;
+  @Input() data: any[] = [];
   @Input() loading = true;
-
- selection: any | any[] = null;
+  selection: any | any[] = null;
   expandedRowKeys: { [key: string]: boolean } = {};
 
   ngOnInit() {
