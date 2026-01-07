@@ -28,8 +28,7 @@
 
     <div class="table-area">
       <div class="table-wrapper">
-        <super-table *ngIf="currentConfig" [config]="currentConfig" [data]="currentData" (pageChange)="onPage($event)"
-          (sortChange)="onSort($event)" (selectionChange)="onSelection($event)">
+        <super-table *ngIf="currentConfig" [config]="currentConfig" [data]="currentData" >
         </super-table>
       </div>
     </div>

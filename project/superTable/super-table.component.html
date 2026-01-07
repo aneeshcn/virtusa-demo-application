@@ -3,7 +3,6 @@
   [value]="data"
   [paginator]="paginator"
   [rows]="rows"
-  [rowsPerPageOptions]="rowsPerPageOptions"
   [loading]="isLoading"
   [resizableColumns]="resizableColumns"
   [sortMode]="sortMode"
@@ -12,15 +11,9 @@
   [globalFilterFields]="globalFilterFields"
   [stripedRows]="stripedRows"
   [showGridlines]="gridlines"
-  [selectionMode]="selectionMode"
   [(selection)]="selection"
-  [frozenWidth]="frozenWidth"
-  [scrollable]="frozenWidth ? true : false"
-  [expandedRowKeys]="expandedRowKeys"
+   [expandedRowKeys]="expandedRowKeys"
   responsiveLayout="scroll"
-  (onPage)="onPage($event)"
-  (onSort)="onSort($event)"
-  (onSelectionChange)="onSelection($event)"
   class="super-table">
 
 
@@ -45,7 +38,7 @@
 
   <ng-template pTemplate="header">
     <tr>
-      <th *ngIf="selectionMode === 'multiple'">
+      <th>
         <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
       </th>
 
@@ -77,15 +70,11 @@
 
   <ng-template pTemplate="body" let-row>
     <tr>
-      <td *ngIf="selectionMode === 'multiple'">
+      <td>
         <p-tableCheckbox [value]="row"></p-tableCheckbox>
       </td>
 
-      <td *ngIf="selectionMode === 'single' && selectionType === 'radio'">
-        <p-tableRadioButton [value]="row"></p-tableRadioButton>
-      </td>
-
-      <td *ngFor="let col of config.columns">
+       <td *ngFor="let col of config.columns">
         <ng-container *ngIf="col.field === 'avatar'">
             <p-avatar [image]="row.avatar || defaultAvatar" shape="circle" size="normal">
             </p-avatar>
@@ -133,7 +122,7 @@
 
   <ng-template pTemplate="emptymessage">
     <tr>
-      <td [attr.colspan]="config.columns.length + (selectionMode ? 1 : 0)">
+      <td [attr.colspan]="config.columns.length ? 1 : 0">
         No records found
       </td>
     </tr>

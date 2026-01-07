@@ -26,13 +26,11 @@ import { AvatarModule } from 'primeng/avatar';
 export class SuperTableComponent {
   searchValue: any
   defaultAvatar = "https://primefaces.org/cdn/primeng/images/demo/avatar/walter.jpg";
-  @Input({ required: true }) config!: SuperTableConfig;
+  @Input({ required: true }) config!: SuperTableConfig;// sent config everytime,will sent runtime error if not sent during component initialization
   @Input() data: any[] = [];
   @Input() loading = true;
 
-  @Output() pageChange = new EventEmitter<any>();
-  @Output() sortChange = new EventEmitter<any>();
-  @Output() selectionChange = new EventEmitter<any>();
+
 
   selection: any | any[] = null;
   expandedRowKeys: { [key: string]: boolean } = {};
@@ -61,46 +59,6 @@ export class SuperTableComponent {
 
   get gridlines() {
     return this.opt<boolean>('showGridlines', false);
-  }
-
-  get selectionType(): string | undefined {
-    return this.opt<string>('selectionMode'); // dynamic selectionMode from JSON
-  }
-
-  get selectionMode(): 'single' | 'multiple' | null {
-    if (this.selectionType === 'single' || this.selectionType === 'radio') return 'single';
-    if (this.selectionType === 'multiple' || this.selectionType === 'checkbox') return 'multiple';
-    return null;
-  }
-
-  get frozenWidth(): string | undefined {
-    return this.opt<string>('frozenWidth');
-  }
-
-  get expandableRows(): boolean {
-    return this.opt<boolean>('expandableRows', false)!;
-  }
-
-
-  get caption(): string | undefined {
-    return this.opt<string>('caption');
-  }
-
-  /* ---------------- Events ---------------- */
-  onPage(e: any) {
-    this.pageChange.emit(e);
-  }
-
-  onSort(e: any) {
-    this.sortChange.emit(e);
-  }
-
-  onSelection(e: any) {
-    this.selectionChange.emit(e);
-  }
-
-  get rowsPerPageOptions(): number[] {
-    return this.opt<number[]>('rowsPerPageOptions') ?? [5, 10, 20];
   }
 
   get isLoading(): boolean {

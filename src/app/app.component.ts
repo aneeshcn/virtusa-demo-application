@@ -13,7 +13,6 @@ import { SuperTableDataService } from '../services/super-table-data.service';
 })
 export class AppComponent {
 
-  Object = Object;
   selectedMode = '';
   currentConfig: SuperTableConfig | null = null;
   currentData: any[] = [];
@@ -30,7 +29,6 @@ export class AppComponent {
     this.selectedMode = mode;
     this.currentConfig = null as any;
     this.currentData = [];
-
     setTimeout(() => {
       const result = this.tableService.getModeData(mode);
       this.currentConfig = result.config;
@@ -38,17 +36,4 @@ export class AppComponent {
     });
   }
 
-
-
-  onPage(event: any) {
-    console.log('Page event', event);
-  }
-
-  onSort(event: any) {
-    console.log('Sort event', event);
-  }
-
-  onSelection(event: any) {
-    console.log('Selection event', event);
-  }
 }
